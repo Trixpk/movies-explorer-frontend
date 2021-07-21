@@ -1,0 +1,40 @@
+.portfolio {
+    margin-top: 100px;
+}
+
+.portfolio__title {
+    font-size: 18px;
+    line-height: 20px;
+    color: #8b8b8b;
+}
+
+.portfolio__list {
+    list-style: none;
+    padding: 0;
+}
+
+.portfolio__list-item {
+    /*padding: 20px 0;*/
+    border-bottom: 1px solid #424242;
+}
+
+.portfolio__list-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    line-height: 50px;
+    font-weight: 400;
+}
+
+.portfolio__list-link:after {
+    content: "";
+    display: block;
+    background: url("../../images/link-arrow.svg") no-repeat;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+}

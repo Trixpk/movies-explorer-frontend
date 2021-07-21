@@ -1,0 +1,8 @@
+.about__title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 400;
+    border-bottom: 1px solid #dadada;
+    padding-bottom: 23px;
+    color: #fff;
+}

@@ -1,0 +1,67 @@
+.about {
+    margin-top: 90px;
+    color: #fff;
+}
+
+.about__info {
+    display: flex;
+    margin: 70px 0 110px 0;
+    justify-content: space-between;
+}
+
+.about__stages {
+    max-width: 500px;
+}
+
+.about__period {
+    max-width: 500px;
+}
+
+.about__subtitle {
+    margin: 0 0 22px 0;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.about__text {
+    margin: 0;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.about__scale {
+    margin-bottom: 110px;
+    display: flex;
+}
+
+.about__scale-week {
+    width: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.about__scale-fourweek {
+    width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.about__scale_green {
+    background-color: #3DDC84;
+    color: #000;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 9px 0;
+    margin-bottom: 14px;
+}
+
+.about__scale-grey {
+    background-color: #303030;
+    padding: 9px 0;
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 17px;
+}

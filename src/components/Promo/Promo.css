@@ -1,5 +1,6 @@
 .promo {
     max-width: 1200px;
+    width: calc(100% - 40px);
     background-color: #272727;
     margin: 0 auto;
 }
@@ -16,4 +17,23 @@
 
 .margin_20 {
     margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .promo__title {
+        padding-top: 350px;
+        font-size: 40px;
+        line-height: 52px;
+    }
+}
+
+@media (max-width: 440px) {
+    .promo {
+        width: calc(100% - 28px);
+    }
+
+    .promo__title {
+        font-size: 29px;
+        line-height: 37px;
+    }
 }

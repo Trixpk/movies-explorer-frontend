@@ -10,11 +10,11 @@
 }
 
 .about__stages {
-    max-width: 500px;
+    max-width: 550px;
 }
 
 .about__period {
-    max-width: 500px;
+    max-width: 550px;
 }
 
 .about__subtitle {
@@ -26,8 +26,8 @@
 
 .about__text {
     margin: 0;
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 20px;
 }
 
 .about__scale {
@@ -64,4 +64,25 @@
     margin-bottom: 14px;
     font-size: 14px;
     line-height: 17px;
+}
+
+.about__scale-direction {
+    color: #a0a0a0;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+@media (max-width: 768px) {
+    .about__text {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .about__stages {
+        max-width: 319px;
+    }
+
+    .about__period {
+        max-width: 319px;
+    }
 }

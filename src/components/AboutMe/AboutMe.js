@@ -1,6 +1,6 @@
 import './AboutMe.css';
 import Title from "../Title/Title";
-import Avatar from '../../images/image.png';
+import Avatar from '../../images/ava.jpg';
 import Portfolio from "../Portfolio/Portfolio";
 
 export default function AboutMe() {

@@ -5,6 +5,12 @@ body {
 
 .container {
     max-width: 1140px;
-    width: calc(100% - 100px);
+    width: calc(100% - 140px);
     margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: calc(100% - 100px);
+    }
 }

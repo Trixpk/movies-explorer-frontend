@@ -1,5 +1,4 @@
 .header {
-    width: calc(100% - 60px);
     min-height: 74px;
     display: flex;
     align-items: center;
@@ -29,6 +28,12 @@
     border: none;
     padding: 8px 20px;
     border-radius: 3px;
+    transition: .5s;
+}
+
+.header__signin:hover {
+    cursor: pointer;
+    background: rgba(61, 220, 132, .8);
 }
 
 @media (max-width: 320px) {

@@ -1,0 +1,46 @@
+.movie {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    background: #2F2F2F;
+}
+
+.movie__info {
+    margin: 0 0 22px 22px;
+}
+
+.movie__title {
+    color: #fff;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+    margin-top: 22px;
+    margin: 22px 0 0 0;
+}
+
+.movie__duration {
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: 400;
+    color: #8B8B8B;
+    display: block;
+    margin-top: 13px;
+}
+
+.movie__like {
+    background-color: transparent;
+    border: none;
+    background-image: url('../../images/like.svg');
+    width: 14px;
+    height: 12px;
+    margin-top: 30px;
+}
+
+.movie__like:hover {
+    cursor: pointer;
+}
+
+.movie__image {
+    max-width: 220px;
+    padding: 6px;
+}

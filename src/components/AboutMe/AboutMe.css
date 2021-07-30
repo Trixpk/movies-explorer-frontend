@@ -4,7 +4,6 @@
 
 .about-me__wrapper {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row-reverse;
     justify-content: space-between;
     margin: 66px 0 0 0;
@@ -14,6 +13,7 @@
     max-width: 600px;
     min-width: 292px;
     width: 100%;
+    padding-right: 50px;
 }
 
 .about-me__name {
@@ -24,7 +24,11 @@
 }
 
 .about-me__image {
-
+    width: 270px;
+    max-height: 352px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .about-me__profession {
@@ -54,4 +58,10 @@
 .about-me__social-link {
     color: #fff;
     text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .about-me__image {
+        width: 255px;
+    }
 }

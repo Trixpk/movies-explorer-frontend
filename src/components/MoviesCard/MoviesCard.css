@@ -44,3 +44,30 @@
     max-width: 220px;
     padding: 6px;
 }
+
+@media (max-width: 530px) {
+    .movie {
+        flex-direction: column-reverse;
+    }
+
+    .movie__image {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .movie__info {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 14px 12px;
+    }
+
+    .movie__like {
+        margin-right: 16px;
+    }
+
+    .movie__title {
+        font-size: 12px;
+        line-height: 14px;
+        margin-top: 14px;
+    }
+}

@@ -36,6 +36,7 @@
 }
 
 .about__scale-week {
+    min-width: 100px;
     width: 20%;
     text-align: center;
     display: flex;
@@ -84,5 +85,35 @@
 
     .about__period {
         max-width: 319px;
+    }
+}
+
+@media (max-width: 570px) {
+    .about__info {
+        flex-direction: column;
+        margin: 60px 0;
+    }
+
+    .about__stages {
+        margin: 0 auto 55px auto;
+    }
+
+    .about__period {
+        margin: 0 auto;
+    }
+
+    .about__subtitle {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 16px;
+    }
+
+    .about__text {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .about__scale {
+        margin-bottom: 70px;
     }
 }

@@ -6,7 +6,8 @@ import Portfolio from "../Portfolio/Portfolio";
 export default function AboutMe() {
 
     return (
-        <section className="about-me container">
+        <>
+        <section id={"student"} className="about-me container">
             <Title text="Студент"/>
             <div className="about-me__wrapper">
                 <img className="about-me__image" src={Avatar} alt="Павел Поляков"/>
@@ -21,15 +22,16 @@ export default function AboutMe() {
                         фриланс-заказами и ушёл с постоянной работы.</p>
                     <ul className="about-me__social">
                         <li className="about-me__social-item">
-                            <a className="about-me__social-link" target="_blank" href="https://www.facebook.com/trixpk">Facebook</a>
+                            <a className="about-me__social-link" target="_blank" rel="noreferrer" href="https://www.facebook.com/trixpk">Facebook</a>
                         </li>
                         <li className="about-me__social-item">
-                            <a className="about-me__social-link" target="_blank" href="https://github.com/Trixpk">GitHub</a>
+                            <a className="about-me__social-link" target="_blank" rel="noreferrer" href="https://github.com/Trixpk">GitHub</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <Portfolio/>
         </section>
+        <Portfolio/>
+        </>
     );
 }

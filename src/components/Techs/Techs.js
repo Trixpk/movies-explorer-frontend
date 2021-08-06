@@ -4,7 +4,7 @@ import Title from "../Title/Title";
 export default function Techs() {
 
     return (
-        <section className="techs container">
+        <section id={"tech"} className="techs container">
             <Title text="Технологии"/>
             <h3 className="techs__title">7 технологий</h3>
             <p className="techs_text">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>

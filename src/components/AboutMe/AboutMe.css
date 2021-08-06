@@ -65,3 +65,34 @@
         width: 255px;
     }
 }
+
+@media (max-width: 690px) {
+    .about-me__wrapper {
+        flex-direction: column;
+        margin-top: 60px;
+    }
+
+    .about-me__info {
+        padding: 0;
+    }
+
+    .about-me__image {
+        width: 100%;
+    }
+
+    .about-me__name {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .about-me__profession {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .about-me__text {
+        font-size: 11px;
+        line-height: 16px;
+        margin-bottom: 40px;
+    }
+}

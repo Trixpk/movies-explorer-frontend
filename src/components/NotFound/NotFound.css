@@ -1,0 +1,27 @@
+.not-found__title {
+    font-size: 140px;
+    line-height: 170px;
+    color: #fff;
+    text-align: center;
+    margin: 245px 0 30px 0;
+}
+
+.not-found__caption {
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.not-found__link {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #4285F4;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 185px;
+}

@@ -1,0 +1,13 @@
+.main-menu__link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 13px;
+    line-height: 18px;
+    margin-right: 16px;
+}
+
+@media (max-width: 768px) {
+    .main-menu {
+        display: none;
+    }
+}

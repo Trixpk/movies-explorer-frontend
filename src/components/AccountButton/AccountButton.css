@@ -1,0 +1,33 @@
+.account-link {
+    max-width: 100px;
+    width: 100%;
+    background: transparent;
+    border: 2px solid #aaa;
+    border-radius: 50px;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: .5s;
+    text-decoration: none;
+}
+
+.account-link_hidden {
+    display: none;
+}
+
+.account-icon:before {
+    content: '';
+    width: 12px;
+    height: 14px;
+    display: inline-block;
+    background: url('../../images/account.svg') no-repeat;
+    margin-right: 7px;
+}
+
+.account-link:hover {
+    cursor: pointer;
+    opacity: .8;
+}

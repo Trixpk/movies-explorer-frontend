@@ -26,10 +26,12 @@
     outline: none;
 }
 
-.search__movie:focus .search__wrapper {
-    outline: yellow;
-    border-color: yellow;
+.search__wrapper:focus-within {
+    border-color: #3DDC84;
+    transition: .3s;
 }
+
+
 
 .search__submit {
     background: #4285F4;

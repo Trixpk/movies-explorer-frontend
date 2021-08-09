@@ -34,10 +34,27 @@
     width: 14px;
     height: 12px;
     margin-top: 30px;
+    transition: .5s;
 }
 
 .movie__like:hover {
     cursor: pointer;
+    opacity: .8;
+}
+
+.movie__delete {
+    border: none;
+    background: url('../../images/close.svg') no-repeat;
+    background-size: cover;
+    width: 14px;
+    height: 12px;
+    margin-top: 30px;
+    transition: .5s;
+}
+
+.movie__delete:hover {
+    cursor: pointer;
+    opacity: .8;
 }
 
 .movie__image {

@@ -11,6 +11,7 @@
 
 .about__stages {
     max-width: 550px;
+    padding-right: 30px;
 }
 
 .about__period {
@@ -96,6 +97,7 @@
 
     .about__stages {
         margin: 0 auto 55px auto;
+        padding: 0;
     }
 
     .about__period {

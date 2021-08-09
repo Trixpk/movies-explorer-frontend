@@ -26,6 +26,11 @@
     outline: none;
 }
 
+.search__movie:focus .search__wrapper {
+    outline: yellow;
+    border-color: yellow;
+}
+
 .search__submit {
     background: #4285F4;
     padding: 17px 20px;

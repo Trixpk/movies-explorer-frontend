@@ -12,7 +12,7 @@ export default function MobileMenu() {
                 <Link to="/movies" className="mobile-menu__link"><span className="mobile-menu__link_active">Фильмы</span></Link>
                 <Link to="/saved-movies" className="mobile-menu__link"><span>Сохранённые фильмы</span></Link>
             </nav>
-            <AccountButton />
+            <AccountButton isMobileMenu={true} />
         </div>
     );
 }

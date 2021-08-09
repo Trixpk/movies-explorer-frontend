@@ -22,3 +22,14 @@
         margin-top: 315px;
     }
 }
+
+@media (max-width: 340px) {
+    .menu {
+        margin-top: 210px;
+    }
+
+    .menu__link {
+        font-size: 10px;
+        line-height: 16px;
+    }
+}

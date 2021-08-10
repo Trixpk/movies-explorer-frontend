@@ -8,6 +8,7 @@ export default function MoviesCardList() {
             <div className="movies container">
                 <MoviesCard isSavedPage={true} />
                 <MoviesCard />
+                <MoviesCard isLiked={true} />
                 <MoviesCard />
                 <MoviesCard />
             </div>

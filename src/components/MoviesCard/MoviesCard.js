@@ -12,9 +12,9 @@ export default function MoviesCard(props) {
                 </div>
                 {
                 (props.isSavedPage) ?
-                <button className="movie__like" />
-                :
                 <button className="movie__delete" />
+                :
+                <button className={ (props.isLiked) ? 'movie__liked' : 'movie__like' } />
                 }
             </div>
             <img className="movie__image" src={ MoviePic } alt="фильм" />

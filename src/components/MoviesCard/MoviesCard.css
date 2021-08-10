@@ -37,6 +37,16 @@
     transition: .5s;
 }
 
+.movie__liked {
+    background: url('../../images/liked.svg') no-repeat;
+    width: 14px;
+    height: 12px;
+    margin-top: 30px;
+    transition: .5s;
+    border: none;
+    cursor: pointer;
+}
+
 .movie__like:hover {
     cursor: pointer;
     opacity: .8;

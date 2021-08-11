@@ -6,8 +6,9 @@ export default function MoviesCardList() {
     return(
         <>
             <div className="movies container">
+                <MoviesCard isSavedPage={true} />
                 <MoviesCard />
-                <MoviesCard />
+                <MoviesCard isLiked={true} />
                 <MoviesCard />
                 <MoviesCard />
             </div>

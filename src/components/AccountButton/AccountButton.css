@@ -31,3 +31,7 @@
     cursor: pointer;
     opacity: .8;
 }
+
+.account-link_mobile {
+    margin: 550px auto 0 auto;
+}

@@ -1,7 +1,7 @@
 import './MoviesCard.css';
 import MoviePic from '../../images/movie.jpg';
 
-export default function MoviesCard() {
+export default function MoviesCard(props) {
 
     return(
         <div className="movie">
@@ -10,7 +10,12 @@ export default function MoviesCard() {
                     <h2 className="movie__title">33 слова о дизайне</h2>
                     <span className="movie__duration">1ч 42м</span>
                 </div>
-                <button className="movie__like" />
+                {
+                (props.isSavedPage) ?
+                <button className="movie__delete" />
+                :
+                <button className={ (props.isLiked) ? 'movie__liked' : 'movie__like' } />
+                }
             </div>
             <img className="movie__image" src={ MoviePic } alt="фильм" />
         </div>

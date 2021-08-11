@@ -13,7 +13,7 @@ export default function AboutMe() {
                 <img className="about-me__image" src={Avatar} alt="Павел Поляков"/>
                 <div className="about-me__info">
                     <h3 className="about-me__name">Павел</h3>
-                    <p className="about-me__profession">Фронтенд-разработчик, 30 лет</p>
+                    <p className="about-me__profession">Фронтенд-разработчик, 31 год</p>
                     <p className="about-me__text">Я родился и живу в Саратове, закончил факультет экономики СГУ. У меня
                         есть жена
                         и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал

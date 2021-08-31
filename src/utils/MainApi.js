@@ -10,7 +10,8 @@ class MainApi {
 
     getMovies() {
         return fetch(this._baseUrl + '/movies', {
-            headers: this._headers
+            headers: this._headers,
+            credentials: 'include'
         })
         .then(res => {
             return this._checkRequest(res);
@@ -18,6 +19,18 @@ class MainApi {
     }
 
     authorize = (data) => {
+        return fetch(this._baseUrl + '/signin', {
+            headers: this._headers,
+            method: 'POST',
+            body: JSON.stringify(data),
+            credentials: "include"
+        })
+        .then(res => {
+            return this._checkRequest(res);
+        })
+    }
+
+    register = (data) => {
         return fetch(this._baseUrl + '/signup', {
             headers: this._headers,
             method: 'POST',
@@ -27,10 +40,68 @@ class MainApi {
             return this._checkRequest(res);
         })
     }
+
+    updateProfile = (data) => {
+        return fetch(this._baseUrl + '/users/me', {
+            headers: this._headers,
+            method: 'PATCH',
+            body: JSON.stringify(data),
+            credentials: "include"
+        })
+        .then(res => {
+            return this._checkRequest(res);
+        })
+    }
+
+    signOut = () => {
+        return fetch(this._baseUrl + '/signout', {
+            headers: this._headers,
+            method: 'POST',
+            credentials: 'include'
+        })
+        .then(res => {
+            this._checkRequest(res);
+        })
+    }
+
+    checkToken = (token) => {
+        return fetch(this._baseUrl + '/users/me', {
+            headers: {
+                "Content-Type": "application/json"
+            },
+            method: 'GET',
+            credentials: "include"
+        }).then((res) => {
+            return this._checkRequest(res);
+        })
+    }
+
+    saveMovie = (data) => {
+        return fetch(this._baseUrl + '/movies', {
+            headers: this._headers,
+            method: 'POST',
+            body: JSON.stringify(data),
+            credentials: 'include'
+        })
+        .then(res => {
+            return this._checkRequest(res);
+        })
+    }
+
+    deleteMovie = (movieId) => {
+        return fetch(this._baseUrl + '/movies/' + movieId, {
+            headers: this._headers,
+            method: 'DELETE',
+            credentials: 'include'
+        })
+        .then(res => {
+            this._checkRequest(res);
+        })
+    }
 }
 
-export const MainApi = new MainApi({
-    baseUrl: 'https://api.trixpk.nomoredomains.club',
+export const mainApi = new MainApi({
+    baseUrl: 'http://localhost:4000',
     headers: {
         "Content-Type": "application/json"
     }

@@ -101,7 +101,7 @@ class MainApi {
 }
 
 export const mainApi = new MainApi({
-    baseUrl: 'http://localhost:4000',
+    baseUrl: 'api.trixpk.nomoredomains.club',
     headers: {
         "Content-Type": "application/json"
     }

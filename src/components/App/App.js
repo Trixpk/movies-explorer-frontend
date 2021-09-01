@@ -22,6 +22,8 @@ function App() {
     const [movies, setMovies] = useState([]);
     const [savedMovies, setSavedMovies] = useState([]);
     const [isMoviesLoading, setIsMoviesLoading] = useState(false);
+    const [loginError, setLoginError] = useState(false);
+    const [authError, setAuthError] = useState(false);
 
     useEffect(() => {
         mainApi.getMovies()
@@ -52,9 +54,11 @@ function App() {
     const handleRegister = (data) => {
         mainApi.register(data)
             .then(res => {
+                setLoginError(true);
                 history.push('/signin');
             })
             .catch(err => {
+                setAuthError(true);
                 console.log(err);
             })
     }
@@ -68,6 +72,7 @@ function App() {
                 history.push('/movies');
             })
             .catch(err => {
+                setLoginError(true);
                 console.log(`Ошибка: ${err}`);
             })
     }
@@ -177,7 +182,6 @@ function App() {
                     </Route>
 
                     <ProtectedRoute
-                        exact
                         path="/movies"
                         loggedIn={loggedIn}
                     >
@@ -192,7 +196,6 @@ function App() {
                     </ProtectedRoute>
 
                     <ProtectedRoute
-                        exact
                         path="/saved-movies"
                         loggedIn={loggedIn}
                     >
@@ -205,11 +208,11 @@ function App() {
                     </ProtectedRoute>
 
                     <Route path="/signup">
-                        <Register onRegister={handleRegister} loggedIn={loggedIn}/>
+                        <Register authError={ authError } onRegister={handleRegister} loggedIn={loggedIn}/>
                     </Route>
 
                     <Route path="/signin">
-                        <Login onLogin={handleLogin} loggedIn={loggedIn}/>
+                        <Login loginError={ loginError } onLogin={handleLogin} loggedIn={loggedIn}/>
                     </Route>
 
                     <ProtectedRoute

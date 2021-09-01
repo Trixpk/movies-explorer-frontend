@@ -42,7 +42,10 @@ export default function Login(props) {
             <div className="signin__item">
                 <input name="password" onChange={ handleChange } className="signin__input" type="password" required />
                 <label className="signin__label">Пароль</label>
-                <span className="signin__error-notice">Что-то пошло не так...</span>
+                {
+                    props.loginError ? <span className="signin__error-notice">Что-то пошло не так...</span> : null
+                }
+                
             </div>
             <button type="submit" className="signin__submit">Войти</button>
             <div className="signin__caption">Уже зарегистрированы?

@@ -47,7 +47,9 @@ export default function Register(props) {
                     <div className="signup__item">
                         <input name="password" onChange={ handleChange } className="signup__input" type="password" required />
                         <label className="signup__label">Пароль</label>
-                        <span className="signup__error-notice">Что-то пошло не так...</span>
+                        {
+                            props.authError ? <span className="signup__error-notice">Что-то пошло не так...</span> : null
+                        }
                     </div>
                     <button type="submit" className="signup__submit">Зарегистрироваться</button>
                     <div className="signup__caption">Уже зарегистрированы?

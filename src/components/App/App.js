@@ -59,12 +59,15 @@ function App() {
     }
 
     const handleRegister = (data) => {
-        console.log(data)
+
         mainApi.register(data)
             .then(res => {
-                console.log(res)
+
                 setLoginError(true);
-                history.push('/signin');
+
+                handleLogin({ email: data.email, password: data.password });
+
+                history.push('/movies');
             })
             .catch(err => {
                 setAuthError(true);

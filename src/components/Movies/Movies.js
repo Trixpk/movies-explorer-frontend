@@ -8,6 +8,7 @@ export default function Movies(props) {
         <>
             <SearchForm onSearchMovies={ props.onGetMovies } />
             <MoviesCardList 
+                searchMoviesEmpty={ props.searchMoviesEmpty }
                 onSaveMovie={ props.onSaveMovie }
                 onDeleteMovie={ props.onDeleteMovie }
                 movies={ props.movies }

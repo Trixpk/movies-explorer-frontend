@@ -3,20 +3,22 @@ import MoviesCard from '../MoviesCard/MoviesCard';
 import Preloader from '../Preloader/Preloader';
 import { isSavedMovie } from '../../utils/utils';
 import {useState} from "react";
+import SearchEmpty from '../SearchEmpty/SearchEmpty';
 
 export default function MoviesCardList(props) {
 
     const [ countMoreMovies, setCountMoreMovies ] = useState(3);
-    console.log(countMoreMovies)
-
 
     const handleMoreClick = () => {
         setCountMoreMovies(countMoreMovies + 3);
     }
-console.log(props.movies)
+
     return(
         <>
             <div className="movies container">
+                {
+                    props.searchMoviesEmpty || props.searchSavedMoviesEmpty ? <SearchEmpty/> : null   
+                }
                 {
                     (props.isMoviesLoading) ? <Preloader/> : null
                 }

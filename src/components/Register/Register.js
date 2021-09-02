@@ -41,7 +41,7 @@ export default function Register(props) {
                         <label className="signup__label">Имя</label>
                     </div>
                     <div className="signup__item">
-                        <input name="email" onChange={ handleChange } className="signup__input" type="text" required />
+                        <input name="email" onChange={ handleChange } className="signup__input" type="email" required />
                         <label className="signup__label">E-mail</label>
                     </div>
                     <div className="signup__item">

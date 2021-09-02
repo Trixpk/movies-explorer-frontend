@@ -24,6 +24,9 @@ function App() {
     const [isMoviesLoading, setIsMoviesLoading] = useState(false);
     const [loginError, setLoginError] = useState(false);
     const [authError, setAuthError] = useState(false);
+    const [successUpdateProfile, setSuccessUpdateProfile] = useState(false);
+    const [searchMoviesEmpty, setSearchMoviesEmpty] = useState(false);
+    const [searchSavedMoviesEmpty, setSearchSavedMoviesEmpty] = useState(false);
 
     useEffect(() => {
         mainApi.getMovies()
@@ -35,6 +38,10 @@ function App() {
 
     useEffect(() => {
         checkToken();
+    }, [])
+
+    useEffect(() => {
+        setMovies(JSON.parse(localStorage.getItem('movies')));
     }, [])
 
     const checkToken = () => {
@@ -52,8 +59,10 @@ function App() {
     }
 
     const handleRegister = (data) => {
+        console.log(data)
         mainApi.register(data)
             .then(res => {
+                console.log(res)
                 setLoginError(true);
                 history.push('/signin');
             })
@@ -79,8 +88,13 @@ function App() {
 
     const handleSearhMovies = (data) => {
         setIsMoviesLoading(true);
-        moviesApi.getMovies()
+        const apiMovies = JSON.parse(localStorage.getItem('api-movies'));
+
+        if( apiMovies === null || apiMovies.length < 1) {
+            moviesApi.getMovies()
             .then(res => {
+                console.log(res);
+                localStorage.setItem('api-movies', JSON.stringify(res));
 
                 const filterData = res.filter((item) => {
                     if (data.shortFilm) {
@@ -90,6 +104,11 @@ function App() {
                     }
                 })
 
+                if(filterData.length === 0) {
+                    setSearchMoviesEmpty(true);
+                }else {
+                    setSearchMoviesEmpty(false);
+                }
                 localStorage.setItem('movies', JSON.stringify(filterData));
                 setMovies(filterData);
             })
@@ -99,6 +118,51 @@ function App() {
             .finally(() => {
                 setIsMoviesLoading(false);
             })
+        }else {
+            const res = JSON.parse(localStorage.getItem('api-movies'));
+
+            const filterData = res.filter((item) => {
+                if (data.shortFilm) {
+                    return item.nameRU.includes(data.word) && item.duration < 40
+                } else {
+                    return item.nameRU.includes(data.word);
+                }
+            })
+
+            if(filterData.length === 0) {
+                setSearchMoviesEmpty(true);
+            }else {
+                setSearchMoviesEmpty(false);
+            }
+            localStorage.setItem('movies', JSON.stringify(filterData));
+            setMovies(filterData);
+            setIsMoviesLoading(false);
+        }
+
+        /* moviesApi.getMovies()
+            .then(res => {
+                const filterData = res.filter((item) => {
+                    if (data.shortFilm) {
+                        return item.nameRU.includes(data.word) && item.duration < 40
+                    } else {
+                        return item.nameRU.includes(data.word);
+                    }
+                })
+
+                if(filterData.length === 0) {
+                    setSearchMoviesEmpty(true);
+                }else {
+                    setSearchMoviesEmpty(false);
+                }
+                localStorage.setItem('movies', JSON.stringify(filterData));
+                setMovies(filterData);
+            })
+            .catch(err => {
+                console.log(`Ошибка при получении фильмов ${err}`)
+            })
+            .finally(() => {
+                setIsMoviesLoading(false);
+            }) */
     }
 
     const handleSearchSavedMovies = (data) => {
@@ -113,6 +177,11 @@ function App() {
                     }
                 })
 
+                if(filterData.length === 0) {
+                    setSearchSavedMoviesEmpty(true);
+                }else {
+                    setSearchSavedMoviesEmpty(false);
+                }
                 setSavedMovies(filterData);
                 localStorage.setItem('saved-movies', JSON.stringify(res.data));
             })
@@ -165,6 +234,7 @@ function App() {
         mainApi.updateProfile(data)
             .then(res => {
                 setCurrentUser(res.data);
+                setSuccessUpdateProfile(true);
             })
             .catch(err => {
                 console.log(`Ошибка при обновлении данных пользователя ${err}`);
@@ -187,6 +257,7 @@ function App() {
                     >
                         <Header loggedIn={loggedIn}/>
                         <Movies
+                            searchMoviesEmpty={ searchMoviesEmpty }
                             onGetMovies={handleSearhMovies}
                             movies={movies}
                             onSaveMovie={handleSaveMovie}
@@ -201,6 +272,7 @@ function App() {
                     >
                         <Header loggedIn={loggedIn}/>
                         <SavedMovies
+                            searchSavedMoviesEmpty={ searchSavedMoviesEmpty }
                             movies={savedMovies}
                             onGetMovies={handleSearchSavedMovies}
                             onDeleteMovie={handleDeleteMovie}
@@ -221,7 +293,7 @@ function App() {
                         loggedIn={loggedIn}
                     >
                         <Header loggedIn={loggedIn}/>
-                        <Profile onSignOut={handleSignOut} onUpdate={handleUpdateProfile}/>
+                        <Profile successUpdateProfile={ successUpdateProfile } onSignOut={handleSignOut} onUpdate={handleUpdateProfile}/>
                     </ProtectedRoute>
 
                     <Route path="*" component={NotFound}/>

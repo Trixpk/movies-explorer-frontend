@@ -29,6 +29,11 @@
     padding-top: 17px;
 }
 
+.profile__notice {
+    margin-top: 20px;
+    color: green;
+}
+
 .profile__buttons {
     margin-top: 220px;
     width: 100%;
@@ -69,6 +74,10 @@
     border: none;
     color: #fff;
     text-align: right;
+}
+
+.profile__input:invalid {
+    color: red;
 }
 
 .profile__input:focus {

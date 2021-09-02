@@ -7,7 +7,7 @@ export default function SavedMovies(props) {
     return(
         <>
             <SearchForm onSearchMovies={ props.onGetMovies } />
-            <MoviesCardList isSavedPage={ true } movies={ props.movies } onDeleteMovie={ props.onDeleteMovie } />
+            <MoviesCardList searchSavedMoviesEmpty={ props.searchSavedMoviesEmpty } isSavedPage={ true } movies={ props.movies } onDeleteMovie={ props.onDeleteMovie } />
         </>
     );
 }

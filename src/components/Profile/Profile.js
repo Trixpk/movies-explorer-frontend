@@ -38,8 +38,11 @@ export default function Profile(props) {
                 </div>
                 <div className="profile__line profile_border">
                     <label>E-mail</label>
-                    <input onChange={ handleChangeEmail } className="profile__input" name="email" type="text" value={ email } />
+                    <input onChange={ handleChangeEmail } className="profile__input" required name="email" type="email" value={ email } />
                 </div>
+                {
+                    props.successUpdateProfile ? <div className="profile__notice">Профиль успешно сохранен</div> : null
+                }
                 <div className="profile__buttons">
                     <button className="profile__edit" onClick={ handleUpdateProfile } >Редактировать</button>
                     <button className="profile__signout" onClick={ props.onSignOut }>Выйти из аккаунта</button>

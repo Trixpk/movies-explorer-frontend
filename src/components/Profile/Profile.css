@@ -29,6 +29,11 @@
     padding-top: 17px;
 }
 
+.profile__notice {
+    margin-top: 20px;
+    color: green;
+}
+
 .profile__buttons {
     margin-top: 220px;
     width: 100%;
@@ -62,6 +67,26 @@
 
 .profile__signout:hover {
     cursor: pointer;
+}
+
+.profile__input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    text-align: right;
+}
+
+.profile__input:invalid {
+    color: red;
+}
+
+.profile__input:focus {
+    outline: none;
+    color: #fff;
+}
+
+.profile__input::placeholder {
+    color: #fff;
 }
 
 @media (max-width: 767px) {
